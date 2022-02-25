@@ -1,0 +1,226 @@
+@use 'placeholders';
+@use 'variables';
+
+footer {
+    background-color: variables.$couleur_bleu;
+    color: variables.$couleur_vert;
+    grid-row: 3 / 4;
+
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 20px;
+
+
+    .en-tete-footer {
+        grid-column: 2 / 12;
+        grid-row: 1 / 2;
+
+        display: flex;
+
+
+        .logo {
+            width: 70px;
+            margin-top: 20px;
+        }
+        
+        button {
+            margin-left: 10px;
+        }
+    }
+
+    .sous-en-tete-footer {
+        grid-column: 2 / 4;
+
+        li {
+
+            margin-top: 10px;
+            a {
+                font-size: 1.25em;
+            }
+        }
+    }
+    
+
+    h4 {
+        font-size: 1.25em;
+        text-transform: uppercase;
+    }
+
+    ul {
+        li {
+            button {
+                background-color: variables.$couleur_vert;
+                color: variables.$couleur_bleu;
+                padding: 15px 20px;
+
+                &:hover, &:focus {
+                    border: 1px solid variables.$couleur_vert;
+                    color: variables.$couleur_vert;
+                    background-color: variables.$couleur_bleu;
+                }
+            }
+            a {
+                color: variables.$couleur_vert;
+            }
+        }
+    };
+
+    .form-infolettre {
+        grid-column: 2 / 12;
+        
+        label {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        input {
+            width: 90%;
+            height: 40px;
+        }
+
+        button {
+            color: variables.$couleur_vert;
+            
+            i {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    .menu-deroulant {
+        grid-column: 1 / 13;
+
+        h4 {
+            border-top: 1px solid variables.$couleur_vert;
+            padding: 20px;
+        }
+
+        &:nth-child(4) {
+            border-bottom: 1px solid variables.$couleur_vert;
+        }
+
+    }
+
+    .reseaux-sociaux {
+        padding: 20px;
+        grid-column: 1 / 7;
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            li {
+                margin: 40px auto;
+
+                i {
+                    background-color: variables.$couleur_vert;
+                    color: variables.$couleur_bleu;
+                    border-radius: 50%;
+                    padding: 10px;
+                    
+                    &:hover, &:focus {
+                        border: 1px solid variables.$couleur_vert;
+                        color: variables.$couleur_vert;
+                        background-color: variables.$couleur_bleu;
+                    }
+                }
+            }
+        }
+    }
+
+    .conditions {
+        grid-column: 1 / 13; 
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            li {
+                margin: 15px;
+            }
+        }
+    }
+
+    p {
+        grid-column: 1 / 13;
+    }
+}
+
+@media #{variables.$large-plus} {
+    footer {        
+        .en-tete-footer {
+            grid-column: 2 / 5;
+            grid-row: 1 / 2;
+    
+            display: block;
+
+            button {
+                margin-left: 0;
+            }   
+        }
+
+        .form-infolettre {
+            grid-column: 2 / 6;
+        }
+
+        .menu-deroulant {
+            grid-column: 7 / 12; 
+            grid-row: 1 / 3;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            ul {
+                width: 40%;
+
+                li {
+                    margin-top: 15px;
+                }
+
+                h4 {
+                    border: none;
+                    padding-left: 0px;
+                }
+                
+            }
+
+            &:nth-child(4) {
+                border-bottom: none;
+            }
+
+        }
+
+        .reseaux-sociaux {
+            grid-column: 9 / 12;
+        }
+
+        .conditions {
+            grid-column: 2 / 12;
+           text-align: left;
+            font-size: 0.6em;
+        }
+
+        p {
+            font-size: 0.75em;
+        }
+    }
+}
+@media #{variables.$xlarge-plus} {
+    footer {        
+        .menu-deroulant {
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly ;
+
+            ul {
+                width: 20%;                
+            }
+
+        }
+
+        .conditions {
+            grid-column: 2 / 12;
+        }
+    }
+}

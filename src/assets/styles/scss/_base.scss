@@ -1,0 +1,66 @@
+@use 'fonts';
+@use 'variables';
+@use 'placeholders';
+@use 'mixins';
+
+body {
+    background-color: variables.$couleur_rose;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: variables.$font_titres;
+}
+
+button {
+    @include mixins.reset-button(transparent, black);
+}
+
+.bureau {
+    display: none;
+}
+
+li {
+    @extend %liste-corrige;
+
+}
+
+a {
+    @extend %liens;
+}
+
+section {
+    max-width: 100rem;
+    margin: 0 auto;
+    ::-webkit-scrollbar {
+        background-color: variables.$couleur_jaune;
+        width: 20px;
+        height: 10px;
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px #fcac00; 
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: variables.$couleur_orange; 
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background:  #fcac00; 
+    }
+}
+
+
+
+@media #{variables.$large-plus} {
+    .bureau {
+        display: block;
+    } 
+    
+    .mobile {
+        display: none;
+    }
+}

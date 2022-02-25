@@ -1,0 +1,22 @@
+@use 'fonts';
+
+$medium-size: 600px;
+$large-size: 900px;
+$xlarge-size: 1200px;
+
+$medium-plus: '(min-width: #{$medium-size})';
+$large-plus: '(min-width: #{$large-size})';
+$xlarge-plus: '(min-width: #{$xlarge-size})';
+
+$couleur_rose: #EAAACA;
+$couleur_vert: #95E8B7;
+$couleur_jaune: #FFF064;
+$couleur_orange: #FCCA00;
+$couleur_mauve: #D9C9ED;
+$couleur_rose_fonce: #df1d7e;
+$couleur_mauve_fonce: #751fdf;
+$couleur_vert_fonce: #073F1E;
+$couleur_bleu: #12334C;
+
+$font_titres: mikado, sans-serif;
+

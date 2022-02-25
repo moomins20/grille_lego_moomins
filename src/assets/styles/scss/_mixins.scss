@@ -1,0 +1,13 @@
+@mixin reset-button($background-color, $text-color) {
+    border: none;
+    border-radius: 10px;
+    color: $text-color;
+    background: $background-color;
+    outline: none;
+    cursor: pointer;
+}
+
+@mixin max-width {
+    max-width: 100rem;
+    margin: 0 auto;
+}
